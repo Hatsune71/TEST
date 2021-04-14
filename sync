@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MANIFEST=https://github.com/Ancient-Lab/manifest
+MANIFEST=https://github.com/Ancient-Roms/manifest.git
 BRANCH=eleven
 
 ancient_dev=false
