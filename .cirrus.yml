@@ -5,6 +5,7 @@ env: # Environt variable to pass to all tasks
     RSA: "ENCRYPTED[18c100e68a8fbf3ad2879f8992369e045b19c921bb3c88383da9b2a2f401f62cb115f2525d3acf5b996b992eb46c9667]"
     CHAT: "ENCRYPTED[53d27659af046815b23b95cd0c4aef002f882e0d21209bb63d2d32dc3fc24b4a154b7de04ee47e5ad2ede6345fc5e231]"
     BOT: "ENCRYPTED[8926dee278b23df9a65d6a0410e825b6e80f45a3f6bb6ce862bacea00f886346c2f3a235bd6bd9633a147eedcaacffde]"
+    git_token: "ENCRYPTED[d3b85dc87823bb698319841e58c2d99a83c142522475f2a44c8d187f5b7e8a32ceda9c2e3cfc5d9b9ec3a0bc400e69a5]"
 
 task:
     name: Hatsune71
