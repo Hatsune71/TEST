@@ -21,11 +21,10 @@ BUILDLOG="out/target/product/ysl/ancient_ci.log"
 lunch ancient_ysl-user
 export KBUILD_BUILD_USER=hats-project
 export KBUILD_BUILD_HOST=hats-ci
-export JAVA_TOOL_OPTIONS=-Xmx16g
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-ccache -M 100G
+ccache -M 150G
 ccache -o compression=true
 ccache -z
 
