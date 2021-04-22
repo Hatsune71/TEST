@@ -96,11 +96,6 @@ function sendTele() {
 	curl -F chat_id=$CHAT -F document=@"$1" https://api.telegram.org/bot$BOT/sendDocument &>/dev/null
 }
 
-up(){
-	curl --upload-file $1 https://transfer.sh/ ; echo
-	# 14 days, 10 GB limit
-}
-
 make_metalava(){
 	make api-stubs-docs
 	make system-api-stubs-docs
@@ -112,7 +107,7 @@ make_rom(){
 		mkfifo reading
 		tee "${BUILDLOG}" < reading & make bacon -j8 > reading
 		if [ -f out/target/product/ysl/*zip ]; then
-			send_zip=$(up out/target/product/ysl/*zip)
+			time rclone copy ccache.tar.gz gdrive:rom/anci -P
 			# Record exit code after build
 			retVal=$?
 			statusBuild
