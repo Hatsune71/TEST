@@ -76,7 +76,7 @@ function statusBuild() {
 		"<b>Command       :</b> <code>${target_command}</code>" \
 		"<b>Started at    :</b> <code> $(uname -a)</code>" \
 		"<b>Instance Uptime :</b> <code> $(uptime -p)</code>" \
-		"Link File : $send_zip" \
+		"Link File : $LINK$zip" \
     "<b>====== Build ROM Completed ======</b>"
 }
 
@@ -107,7 +107,8 @@ make_rom(){
 		mkfifo reading
 		tee "${BUILDLOG}" < reading & make bacon -j8 > reading
 		if [ -f out/target/product/ysl/*zip ]; then
-			time rclone copy ccache.tar.gz gdrive:rom/anci -P
+			time rclone copy out/target/product/ysl/*zip gdrive:rom/anci -P
+			zip=$(basename out/target/product/ysl/Ancient*.zip)
 			# Record exit code after build
 			retVal=$?
 			statusBuild
